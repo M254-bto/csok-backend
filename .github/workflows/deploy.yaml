@@ -23,4 +23,6 @@ jobs:
 
         run: |
 
+          python3 pip -r requirements.txt
+          
           gunicorn -w 1 manage
