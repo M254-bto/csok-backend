@@ -1,0 +1,26 @@
+name: App Deploy
+
+on:
+  push:
+
+    branches:
+
+      - main
+
+jobs:
+
+  Deploy:
+
+    runs-on: self-hosted
+
+    steps:
+
+      - name: Checking Out the Repo
+
+        uses: actions/checkout@v2
+
+      - name: Deploy
+
+        run: |
+
+          gunicorn -w 1 manage
